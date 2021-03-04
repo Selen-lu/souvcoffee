@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+          https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- mybatis-config.xml -->
+
+    <!-- properties 파일 경로 작성 -->
+    <context:property-placeholder location="classpath*:datasource/datasource.properties"/>
+
+    <context:annotation-config/>
+
+    <!-- Mssql dataSource  / properties => ${db.ms.~로 규칙 만듦} -->
+    <bean id="dataSource"  class="org.apache.commons.dbcp.BasicDataSource"  >
+        <property name="driverClassName" value="${ms.db.driverClassName}" />
+        <!--datasource.properties 확인 필요 / window 인증 없이 로그인 할 거라 인증 참값줬나 확인 필요 -->
+        <!--jdbc : sqlserver : // localhost; integratedSecurity = true;-->
+        <property name="url" value="${ms.db.url}" />
+        <property name="username" value="${ms.db.username}" />
+        <property name="password" value="${ms.db.password}" />
+    </bean>
+
+
+
+    <!-- MS SQL-->
+    <!--sqlSessionFactory를 생성하는 sqlSessionFactoryBean 객체 설정-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:mappers/ms/**/*Mapper.xml</value>
+            </list>
+        </property>
+        <property name="typeAliasesPackage" value="com.company.souvcoffee.domain.ms" />
+    </bean>
+
+
+    <!-- sqlSession 취득 하기
+    Template 으로 작성함-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+
+    <!-- jdbc 트렌젝션 매니저  -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+
+
+
+    <!--MySQL-->
+    <bean id="dataSourceMy" class="org.apache.commons.dbcp2.BasicDataSource" >
+        <property name="driverClassName" value="${my.db.driverClassName}" />
+        <property name="url" value="${my.db.url}" />
+        <property name="username" value="${my.db.username}" />
+        <property name="password" value="${my.db.password}" />
+        <property name="maxTotal" value="${my.db.maxTotal}" />
+    </bean>
+
+    <!-- MYSQL-->
+    <!--
+    classpath:/ =>단익 파일 로딩 가능
+    classpath*: => 복수개의 파일이 로딩 가능하게-->
+    <!--sqlSessionFactory를 생성하는 sqlSessionFactoryBean2 객체 설정-->
+    <bean id="sqlSessionFactoryMy" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceMy"/>
+        <property name="typeAliasesPackage" value="com.company.souvcoffee.domain.my" />
+        <!--이미지 경로  -->
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:mappers/my/**/*Mapper.xml</value><!-- 연결할 때 생성하는걸로 변경. 생성하고 비워두면 모든 매핑이 안됨-->
+            </list>
+        </property>
+    </bean>
+
+    <!-- sqlSession Template-->
+    <bean id="sqlSession_my" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryMy"/>
+    </bean>
+
+
+    <!-- transactionManager  -->
+    <bean id="transactionManager_my" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSourceMy"/>
+    </bean>
+
+
+    <!--Commons FileUpload API를 지원하기 위해 스프링프레임워크가 제공하는
+		   CommonsMultipartResolver를 Bean으로 정의-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+
+</beans>

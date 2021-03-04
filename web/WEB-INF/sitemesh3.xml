@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--https://zenomis.tistory.com/entry/sitemesh3-%EC%84%A4%EC%A0%95-->
+<!--https://codesilo.wordpress.com/2013/07/11/spring-mvc-with-sitemesh-3/-->
+<sitemesh>
+<!-- 갖다 붙일 경로 지정-->
+    <!--path => 컨트롤러에서 인터셉트 해오는 경로 == > /* 이면 컨트롤러에서 main 뷰로 보내는 경로
+    decorator => 여 jsp에 장식이 되어라
+    == 뷰의 경로를 뺏어서 데코레이터에 붙이는듯
+    -->
+    <!--네비게이션 네비바 , footer
+     큰 틀은 mapping으로
+    -->
+    <mapping path="/*">
+        <decorator>/WEB-INF/views/decorators/defaultDecorator.jsp</decorator>
+    </mapping>
+
+
+    <mapping path="/admin">
+    <decorator>/WEB-INF/views/decorators/adminDecorator.jsp</decorator>
+    </mapping>
+
+    <mapping path="/user">
+    <decorator>/WEB-INF/views/decorators/userDecorator.jsp</decorator>
+    </mapping>
+
+    <decorator name="header" page="/WEB-INF/views/decorators/front/top.jsp" />
+
+
+    <!--로그인 경로 오면 불포함-->
+    <mapping path="/login.jsp" exclue="true"/>
+</sitemesh>

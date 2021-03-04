@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--마이바티스 인터페이스로 사용할 네임스페이스-->
+<mapper namespace="com.company.souvcoffee.dao.ms.ProductDAO">
+
+    <!--조회-->
+    <select id="productList" resultType="soProduct" >
+
+
+            SELECT
+            *
+        FROM soProduct
+    </select>
+
+
+
+    <resultMap id="productResultMap" type="soProduct">
+        <id property="pid" column="p_id"/>
+        <result property="pname" column="p_name"/>
+        <result property="pprice" column="p_price"/>
+        <result property="pdiscount" column="p_discount"/>
+        <result property="pstock" column="p_stock"/>
+        <result property="pmf" column="p_mf"/>
+        <result property="pterms" column="p_terms"/>
+        <result property="preg" column="p_reg"/>
+        <result property="psell" column="p_sell"/>
+        <result property="pori" column="p_ori"/>
+        <result property="pcaf" column="p_caf"/>
+    </resultMap>
+</mapper>
