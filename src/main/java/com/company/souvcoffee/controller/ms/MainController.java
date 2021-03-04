@@ -1,4 +1,4 @@
-package com.company.souvcoffee.controller;
+package com.company.souvcoffee.controller.ms;
 
 import com.company.souvcoffee.domain.ms.soProduct;
 import com.company.souvcoffee.log4j2.Log4j2;
@@ -23,19 +23,19 @@ import java.util.Locale;
 //RestController => json 값 주고 받기 , 객체 자체를 반환 해도 제이슨으로 출력해줌
 // sitemesh 사용 + main에서 사용하면 조금 곤란해서 사용할거면 따로 컨트롤러 빼야될듯
 @Controller
-public class mainController{
+public class MainController {
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);
 
 
-
-    /* sevlet base package와 연관 o*/
+/*
+    *//* sevlet base package와 연관 o*//*
     private ProductService productService;
 
 
     @Autowired
     public void setProductService(ProductService productService) {
         this.productService = productService;
-    }
+    }*/
 
 // [web/WEB-INF/views/decorators/main.jsp]이(가) "/" 문자로 시작하지 않습니다. == sitemesh3.xml path와 이름이 같나, 아니면 들어가는 단어가 있나 확인 필요
     //  [/]main , []main < 두가지 경로를 다르게 파악하니 이것도 주의 / [/] 도 경로로 포함하나 안하나 차이

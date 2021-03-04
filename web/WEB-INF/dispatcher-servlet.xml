@@ -18,10 +18,18 @@
     <mvc:annotation-driven/>
 
 
-    <!-- base-package의 패키지이름을 기준으로 스캔, 빈 자동생성, 애노테이션-와이어링 자동 연결,
-      com.company.souvcoffee 만 지정하면 다른 main이 있는 컨트롤러까지 인식하므로
-      프로젝트에서 사용하는 본 컨트롤러 클래스에 연결-->
-    <context:component-scan base-package="com.company.souvcoffee"/>
+
+    <!-- msimpl에 @Autowired 필수-->
+    <!-- base-package의 패키지이름을 기준으로 스캔, 빈 자동생성, 애노테이션-와이어링 자동 연결한다.
+ RestController 사용을 위해 서블릿xml을 하나 더 작성했고
+ 컨트롤러 경로가 다르기 때문에 공통 폴더를 작성하면 얘네가 골라서 갈 수 없으므로
+ 각 서블릿.xml에 경로를 작성해준다.
+-->
+    <context:component-scan base-package="com.company.souvcoffee.dao.msimpl"/>
+    <context:component-scan base-package="com.company.souvcoffee.service.msimpl"/>
+    <context:component-scan base-package="com.company.souvcoffee.controller.ms"/>
+
+
 
 
     <!-- 정적소스

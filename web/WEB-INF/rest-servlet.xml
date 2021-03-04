@@ -19,7 +19,18 @@
 
     <!-- Process annotations on registered beans like @Autowired... -->
     <context:annotation-config/>
-    <!-- 컴포넌트 스캔 -->
-    <context:component-scan base-package="com.company.souvcoffee.restcontroller" />
+
+
+    <!-- msimpl에 @Autowired 필수-->
+    <!-- 컴포넌트 스캔 , 스캔 순서 는 dao - service - controller.Rest
+    패키지를...다시 짜야될듯 정신없음-->
+    <context:component-scan base-package="com.company.souvcoffee.dao.msimpl"/>
+    <context:component-scan base-package="com.company.souvcoffee.service.msimpl"/>
+    <context:component-scan base-package="com.company.souvcoffee.controller.rest" />
+
+
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+
 
 </beans>

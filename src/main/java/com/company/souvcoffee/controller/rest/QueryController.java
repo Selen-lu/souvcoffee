@@ -1,4 +1,4 @@
-package com.company.souvcoffee.controller.ms;
+package com.company.souvcoffee.controller.rest;
 
 import com.company.souvcoffee.domain.ms.soProduct;
 import com.company.souvcoffee.service.ms.ProductService;
@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/* http://blog.naver.com/PostView.nhn?blogId=papercut01&logNo=220357664822 */
 @RestController
-@RequestMapping("query")
 public class QueryController {
 
-
-
     private ProductService productService;
-
 
     @Autowired
     public void setProductService(ProductService productService) {
@@ -25,9 +22,10 @@ public class QueryController {
 
 
 
-    @RequestMapping(value = "query.qu", method = RequestMethod.GET)
+    @RequestMapping(value = "/query", method = RequestMethod.GET)
     public List<soProduct> productList() {
-        System.out.println("what");
+        System.out.println("hi");
+        System.out.println(productService.getAll());
         return productService.getAll();
     }
 
