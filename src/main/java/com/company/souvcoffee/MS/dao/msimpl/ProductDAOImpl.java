@@ -1,7 +1,7 @@
 package com.company.souvcoffee.MS.dao.msimpl;
 
 import com.company.souvcoffee.MS.dao.ms.ProductDAO;
-import com.company.souvcoffee.MS.domain.soProduct;
+import com.company.souvcoffee.MS.domain.user.soProduct;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

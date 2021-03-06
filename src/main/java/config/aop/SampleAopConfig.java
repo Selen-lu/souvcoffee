@@ -1,4 +1,4 @@
-package com.company.souvcoffee.config.aop;
+package config.aop;
 
 import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.context.annotation.Bean;

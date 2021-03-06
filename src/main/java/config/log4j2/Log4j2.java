@@ -1,4 +1,4 @@
-package com.company.souvcoffee.config.log4j2;
+package config.log4j2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

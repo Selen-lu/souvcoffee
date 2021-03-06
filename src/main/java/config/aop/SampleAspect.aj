@@ -1,4 +1,4 @@
-package com.company.souvcoffee.config.aop;
+package config.aop;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,10 +18,10 @@ public class SampleAspect {
 *    *(..)  ... =>  인수가 어떤 형태여도 해당
 * */
     
-    @Before("execution(* com.company.souvcoffee.config.aop.SamplecAopBean.*(..))") public void before() {
+    @Before("execution(* config.aop.SamplecAopBean.*(..))") public void before() {
         System.out.println("before:");
     }
-    @After("execution(* com.company.souvcoffee.config.aop.*(..))") public void after() {
+    @After("execution(* config.aop.*(..))") public void after() {
         System.out.println("after:");
     }
 }

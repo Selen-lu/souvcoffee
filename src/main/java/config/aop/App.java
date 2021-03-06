@@ -1,4 +1,4 @@
-package com.company.souvcoffee.config.aop;
+package config.aop;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

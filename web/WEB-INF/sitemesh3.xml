@@ -23,6 +23,8 @@
     <decorator>/WEB-INF/views/decorators/userDecorator.jsp</decorator>
     </mapping>
 
+
+
     <decorator name="header" page="/WEB-INF/views/decorators/front/top.jsp" />
 
 

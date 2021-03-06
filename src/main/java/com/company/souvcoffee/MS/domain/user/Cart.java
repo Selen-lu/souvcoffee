@@ -1,4 +1,4 @@
-package com.company.souvcoffee.MS.domain;
+package com.company.souvcoffee.MS.domain.user;
 
 public class Cart {
         private int canum; //pk

@@ -8,7 +8,7 @@
 
 
     <!--조회-->
-    <select id="productList" resultType="com.company.souvcoffee.MS.domain.soProduct" >
+    <select id="productList" resultType="com.company.souvcoffee.MS.domain.user.soProduct" >
 
 
             SELECT

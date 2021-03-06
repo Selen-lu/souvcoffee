@@ -1,7 +1,7 @@
 package com.company.souvcoffee.MS.controller;
 
 
-import com.company.souvcoffee.config.log4j2.Log4j2;
+import config.log4j2.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -54,7 +54,7 @@ public class MainController {
     public ModelAndView main(ModelAndView mv){
         System.out.println("Main 입니다 ");
         //기본 패키지 : web/~/~/~
-        mv.setViewName("decorators/main");
+        mv.setViewName("user/main");
         return mv;
     }
 
@@ -62,28 +62,28 @@ public class MainController {
     @RequestMapping(value = "service.do", method = RequestMethod.GET)
     public String service(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "decorators/service";
+        return "user/service";
     }
 
     @RequestMapping(value = "portfolio.do", method = RequestMethod.GET)
     public String portfolio(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "decorators/portfolio";
+        return "user/portfolio";
     }
     @RequestMapping(value = "about.do", method = RequestMethod.GET)
     public String about(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "decorators/about";
+        return "user/about";
     }
     @RequestMapping(value = "team.do", method = RequestMethod.GET)
     public String user(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "decorators/team";
+        return "user/team";
     }
     @RequestMapping(value = "contact.do", method = RequestMethod.GET)
     public String contact(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "decorators/contact";
+        return "user/contact";
 
 
     }
