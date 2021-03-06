@@ -24,10 +24,18 @@
  RestController 사용을 위해 서블릿xml을 하나 더 작성했고
  컨트롤러 경로가 다르기 때문에 공통 폴더를 작성하면 얘네가 골라서 갈 수 없으므로
  각 서블릿.xml에 경로를 작성해준다.
+
+
+
+
+https://m.blog.naver.com/PostView.nhn?blogId=todoskr&logNo=220845006916&proxyReferer=https:%2F%2Fwww.google.com%2F
+  서블릿 .xml 파일이 두개 이상이면
+  default handler인 base-package(어노테이션을 이용해 url과 controller 연결 )보단  다른 handler를 사용해야될듯..
+
+
 -->
-    <context:component-scan base-package="com.company.souvcoffee.dao.msimpl"/>
-    <context:component-scan base-package="com.company.souvcoffee.service.msimpl"/>
-    <context:component-scan base-package="com.company.souvcoffee.controller.ms"/>
+
+    <context:component-scan base-package="com.company.souvcoffee.MS"/>
 
 
 

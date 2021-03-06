@@ -38,7 +38,7 @@
 
 
 <!-- sitemesh3 filter-->
-    <filter>
+<filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
     </filter>
@@ -48,37 +48,24 @@
     </filter-mapping>
 
 
-    <!--dispatcher servlet 등록 -->
-    <servlet>
-        <servlet-name>dispatcher</servlet-name>
+    <!--dispatcher servlet 설정 등록-->
+ <servlet>
+        <servlet-name>dispatcher-servlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.do</url-pattern><!-- / => *.do로 변경. 컨트롤러에서 GetMapping 안 .do가 포함되어있으면 연결-->
+
+
+<!-- 매핑 -->
+<servlet-mapping>
+        <servlet-name>dispatcher-servlet</servlet-name>
+        <url-pattern>*.do</url-pattern><!--/ => *.do로 변경. 컨트롤러에서 GetMapping 안 .do가 포함되어있으면 연결-->
     </servlet-mapping>
 
 
-    <!-- rest dispatcher config -->
-    <servlet>
-        <servlet-name>rest-servlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/rest-servlet.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>rest-servlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
 
 
 

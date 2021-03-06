@@ -1,4 +1,4 @@
-package com.company.souvcoffee.domain.ms;
+package com.company.souvcoffee.MS.domain;
 
 import java.sql.Date;
 
@@ -121,5 +121,22 @@ public class soProduct {
 
     public void setPcaf(byte pcaf) {
         this.pcaf = pcaf;
+    }
+
+    @Override
+    public String toString() {
+        return "soProduct{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", pprice=" + pprice +
+                ", pdiscount=" + pdiscount +
+                ", pstock=" + pstock +
+                ", pmf='" + pmf + '\'' +
+                ", pterms=" + pterms +
+                ", preg=" + preg +
+                ", psell=" + psell +
+                ", pori='" + pori + '\'' +
+                ", pcaf=" + pcaf +
+                '}';
     }
 }

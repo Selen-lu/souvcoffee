@@ -1,4 +1,4 @@
-package com.company.souvcoffee.domain.ms;
+package com.company.souvcoffee.MS.domain;
 
 import java.sql.Date;
 

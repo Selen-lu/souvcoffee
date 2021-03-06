@@ -1,18 +1,16 @@
-package com.company.souvcoffee.controller.ms;
+package com.company.souvcoffee.MS.controller;
 
-import com.company.souvcoffee.domain.ms.soProduct;
+
 import com.company.souvcoffee.log4j2.Log4j2;
-import com.company.souvcoffee.service.ms.ProductService;
+import com.company.souvcoffee.MS.service.ms.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Locale;
 
 
@@ -25,6 +23,17 @@ import java.util.Locale;
 @Controller
 public class MainController {
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);
+
+/*
+
+    private ProductService productService;
+
+
+    @Autowired
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+*/
 
 
 /*
@@ -77,15 +86,9 @@ public class MainController {
     public String contact(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "decorators/contact";
-    }
 
-/*
-    @RequestMapping(value = "/query", method = RequestMethod.GET)
-    public List<soProduct> productList(Locale locale) {
-        LOGGER.info("Welcome home! The client locale is {}.", locale);
-        System.out.println("뭔일이고");
-        return productService.getAll();
-    }*/
+
+    }
 
 /*
     xml 파일없이 구현하는 법

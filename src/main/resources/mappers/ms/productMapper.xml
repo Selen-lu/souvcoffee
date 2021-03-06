@@ -4,10 +4,11 @@
 
 
 <!--마이바티스 인터페이스로 사용할 네임스페이스-->
-<mapper namespace="com.company.souvcoffee.dao.ms.ProductDAO">
+<mapper namespace="com.company.souvcoffee.productMapper">
+
 
     <!--조회-->
-    <select id="productList" resultType="soProduct" >
+    <select id="productList" resultType="com.company.souvcoffee.MS.domain.soProduct" >
 
 
             SELECT
