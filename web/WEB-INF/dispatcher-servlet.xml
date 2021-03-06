@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:beans="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
@@ -14,8 +13,18 @@
 
 
 
-    <!-- 어노테이션 기반으로 동작하도록 설정 추가 -->
-    <mvc:annotation-driven/>
+    <!-- 어노테이션 기반으로 동작하도록 설정 추가 및 @RestController 값 반환시 한글 처리-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class ="org.springframework.http.converter.StringHttpMessageConverter">
+            <property name="supportedMediaTypes">
+                <list>
+                    <value>text/html;charset=UTF-8</value>
+                </list>
+            </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
 
 
@@ -35,7 +44,7 @@ https://m.blog.naver.com/PostView.nhn?blogId=todoskr&logNo=220845006916&proxyRef
 
 -->
 
-    <context:component-scan base-package="com.company.souvcoffee.MS"/>
+    <context:component-scan base-package="com.company.souvcoffee"/>
 
 
 
