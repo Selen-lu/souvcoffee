@@ -72,7 +72,7 @@
     <!--sqlSessionFactory를 생성하는 sqlSessionFactoryBean2 객체 설정-->
     <bean id="sqlSessionFactoryMy" class="org.mybatis.spring.SqlSessionFactoryBean">
          <property name="dataSource" ref="dataSourceMy"/>
-        <property name="typeAliasesPackage" value="com.company.souvcoffee.MY.my" />
+        <property name="typeAliasesPackage" value="com.company.souvcoffee.MY.domain" />
         <!-- 이미지 경로  -->
         <property name="mapperLocations">
 

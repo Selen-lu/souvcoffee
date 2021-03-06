@@ -10,12 +10,12 @@
     -->
 
     <!-- aop bean... -->
-    <bean id="sampleAopBean" class="com.company.souvcoffee.aop.SampleAopBean">
+    <bean id="sampleAopBean" class="com.company.souvcoffee.config.aop.SampleAopBean">
         <property name="message" value="this is AOP bean!" />
     </bean>
 
     <!--aop 처리 클래스-->
-    <bean id="sampleMethodAdvice" class="com.company.souvcoffee.aop.SampleMethodAdvice" />
+    <bean id="sampleMethodAdvice" class="com.company.souvcoffee.config.aop.SampleMethodAdvice" />
 
 
     <!--org.springframework.aop.framework 패키지에 포함되어 있는 Spring AOP의 클래스

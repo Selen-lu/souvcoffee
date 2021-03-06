@@ -59,7 +59,7 @@
     </servlet>
 
 
-<!-- 매핑 -->
+<!-- dispathcer-servlet 매핑 -->
 <servlet-mapping>
         <servlet-name>dispatcher-servlet</servlet-name>
         <url-pattern>*.do</url-pattern><!--/ => *.do로 변경. 컨트롤러에서 GetMapping 안 .do가 포함되어있으면 연결-->

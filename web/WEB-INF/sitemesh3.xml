@@ -28,6 +28,6 @@
 
     <!--로그인 경로 오면 불포함-->
     <mapping path="/login.jsp" exclue="true"/>
-    <mapping path="/api/notice/*.do" exclue="true"/> <!--@rRestController-->
+    <mapping path="/api/notice/*.do" exclue="true"/> <!--@RestController 예외 -->
 
 </sitemesh>

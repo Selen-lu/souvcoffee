@@ -1,9 +1,7 @@
-package com.company.souvcoffee.aop;
+package com.company.souvcoffee.config.aop;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 

@@ -28,23 +28,23 @@
 
 
 
-    <!-- msimpl에 @Autowired 필수-->
-    <!-- base-package의 패키지이름을 기준으로 스캔, 빈 자동생성, 애노테이션-와이어링 자동 연결한다.
- RestController 사용을 위해 서블릿xml을 하나 더 작성했고
- 컨트롤러 경로가 다르기 때문에 공통 폴더를 작성하면 얘네가 골라서 갈 수 없으므로
- 각 서블릿.xml에 경로를 작성해준다.
+<!--
+ base-package의 패키지이름을 기준으로 스캔, 빈 자동생성, 애노테이션-와이어링 자동 연결한다
+@Component도 읽어줌 (@annotation-config는 인식못하지만 여기는 패키지부터 읽으므로 그때 객체가 만들어짐)
+만약 패키지명이 달라서 검색하기 어렵다면 , < 쓰고 풀 패키지명 써주면 된다.
 
-
-
-
-https://m.blog.naver.com/PostView.nhn?blogId=todoskr&logNo=220845006916&proxyReferer=https:%2F%2Fwww.google.com%2F
-  서블릿 .xml 파일이 두개 이상이면
-  default handler인 base-package(어노테이션을 이용해 url과 controller 연결 )보단  다른 handler를 사용해야될듯..
-
-
+ex) 두개의 패키지를 스캔
+<context:component-scan base-package="MM.com.company.souvcoffee, MS.com.company.souvcoffee"/> <- 한쌍의 큰 따옴표 안에 패키지 두개 들어있음
 -->
+        <context:component-scan base-package="com.company.souvcoffee"/>
+    <!--이 xml 파일을 => 자바 설정파일로 변경 시
+    자바파일 생성 후 클래스 위에
+    beans xmlns 부분을 => @Configration
+     context:component-scan base-package => @ComponentScan("com.company.souvcoffee")라고 적어주면 된다
 
-    <context:component-scan base-package="com.company.souvcoffee"/>
+     context:component-scan base-package의 패키지가 2개 이상이라면
+      @ComponentScan({"MM.com.company.souvcoffee" , "MS.com.company.souvcoffee"})<-배열로 처리 , 두쌍의 큰 따옴표 안에 패키지 각각  들어있음
+     -->
 
 
 

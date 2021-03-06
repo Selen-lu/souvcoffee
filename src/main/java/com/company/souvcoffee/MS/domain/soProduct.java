@@ -5,6 +5,8 @@ import java.sql.Date;
 public class soProduct {
     public soProduct() {}
 
+    //만약 초기값을 주고싶으면 
+    // @Value("20")< 이런식으로 주면 된다
     private int pid;
     private String pname;
     private int pprice;

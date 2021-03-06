@@ -1,4 +1,4 @@
-package com.company.souvcoffee.aop;
+package com.company.souvcoffee.config.aop;
 
 public class SampleAopBean {
 private String message;

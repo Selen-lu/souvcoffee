@@ -1,4 +1,4 @@
-package com.company.souvcoffee.MY.my;
+package com.company.souvcoffee.MY.domain;
 
 public class Img {
     public Img() {}

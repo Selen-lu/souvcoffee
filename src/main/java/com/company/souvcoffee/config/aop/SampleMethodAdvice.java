@@ -1,4 +1,4 @@
-package com.company.souvcoffee.aop;
+package com.company.souvcoffee.config.aop;
 
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
