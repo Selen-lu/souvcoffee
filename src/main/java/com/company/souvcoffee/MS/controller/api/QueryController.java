@@ -1,11 +1,16 @@
 package com.company.souvcoffee.MS.controller.api;
 
 
+import com.company.souvcoffee.MS.domain.user.Product;
+import com.company.souvcoffee.MS.service.ms.ProductService;
 import config.log4j2.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController("apiNoticeController") //@ResponseBody가 들어온것같은 효과를 준다고한다
@@ -20,32 +25,37 @@ public class QueryController {
 
 
 
-    
 
 
-/*
-
-    private final ProductService productService;
 
 
-    @Autowired(required = false) //AutoWired 연결 안된 상태 , 위에 component에서 직접 주입중이라 그럼.
-    //@Qualifier("product2") // product2로만 받겠다
-    public QueryController(ProductService productService) {
+
+
+    private ProductService productService;
+
+    @Autowired
+    public void setProductService(ProductService productService) {
         this.productService = productService;
     }
-*/
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);
 
 /*
 
     @RequestMapping("productList.do")
-    public  List<soProduct> productList(soProduct product){
+    public List<soProduct> productList(){
 
-        List<soProduct> productList = productService.getList();
-        return productList;
+        soProduct product = new soProduct();
+        List<soProduct> productList = productService.productList();
+        return "";
+    }*/
+
+
+    @RequestMapping("prolist.do")
+    public List<Product> productList(){
+
+        return productService.productList();
     }
-*/
 
 
     @RequestMapping("list.do")

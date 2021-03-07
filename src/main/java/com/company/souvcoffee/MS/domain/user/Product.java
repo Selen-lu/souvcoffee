@@ -2,9 +2,9 @@ package com.company.souvcoffee.MS.domain.user;
 
 import java.sql.Date;
 
-public class soProduct {
+public class Product {
 
-    public soProduct() {}
+    public Product() {}
 
     //만약 초기값을 주고싶으면 
     // @Value("20")< 이런식으로 주면 된다
@@ -20,7 +20,7 @@ public class soProduct {
     private String pori;
     private byte pcaf;
 
-    public soProduct(int pid, String pname, int pprice, int pdiscount, int pstock, String pmf, int pterms, Date preg, int psell, String pori, byte pcaf) {
+    public Product(int pid, String pname, int pprice, int pdiscount, int pstock, String pmf, int pterms, Date preg, int psell, String pori, byte pcaf) {
         this.pid = pid;
         this.pname = pname;
         this.pprice = pprice;

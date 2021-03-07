@@ -15,17 +15,17 @@
     </mapping>
 
 
-    <mapping path="/admin">
+    <mapping path="/admin.do">
     <decorator>/WEB-INF/views/decorators/adminDecorator.jsp</decorator>
     </mapping>
 
-    <mapping path="/user">
+    <mapping path="/user.do">
     <decorator>/WEB-INF/views/decorators/userDecorator.jsp</decorator>
     </mapping>
 
 
-    <mapping path="menu">
-        <decorator>/WEB-INF/views/decorators/menuDecorator.jsp</decorator>
+    <mapping path="/menu.do">
+        <decorator>/WEB-INF/views/decorators/menuSide.jsp</decorator>
     </mapping>
 
 <!--

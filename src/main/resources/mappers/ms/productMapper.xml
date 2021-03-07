@@ -8,17 +8,20 @@
 
 
     <!--조회-->
-    <select id="productList" resultType="com.company.souvcoffee.MS.domain.user.soProduct" >
+    <select id="productList" resultMap="productResultMap" parameterType ="hashmap">
+/* parameterType ="hashmap" =>[getter, setter 있는 domain 자바파일 활용?]*/
 
+
+            use souvenir;/* db 사용 선언  // mssql 의 dao.souvenir -> 스케마.디비이름  */
 
             SELECT
-            *
+      *
         FROM soProduct
     </select>
 
 
 
-    <resultMap id="productResultMap" type="soProduct">
+    <resultMap id="productResultMap" type="Product">
         <id property="pid" column="p_id"/>
         <result property="pname" column="p_name"/>
         <result property="pprice" column="p_price"/>
