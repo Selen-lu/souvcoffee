@@ -3,8 +3,28 @@
          pageEncoding="UTF-8" %>
 <html lang="ko">
 <head>
+    <sitemesh:write property='head' />
 </head>
+
+<header>
+    <sitemesh:write property="header"/>
+</header>
+
+
+<title>
+    <sitemesh:write property='title' />
+</title>
+
+
+
 <body>
-<div> 여기는  어드민 default.jsp 입니당</div>
+<sitemesh:write property='body'/>
 </body>
+
+
+<footer>
+    <sitemesh:write property ="footer"/>
+</footer>
+
+
 </html>

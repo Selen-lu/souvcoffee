@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<title> 서비스 타이틀</title>
+<title> Visit</title>
 
 <body id="page-top">
 
@@ -14,7 +14,7 @@
 <section class="page-section" id="services">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
+            <h2 class="section-heading text-uppercase">Visit</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
         <div class="row text-center">

@@ -25,7 +25,6 @@
         </fileset>
         <fileset id="web rest-servlet servlet context" name="MVC rest-servlet servlet context" removed="true" />
         <fileset id="fileset" name="Spring Application Context1" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/com/company/souvcoffee/aop/SampleAopConfig.java</file>
           <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/bean.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/datasource/datasource.xml</file>

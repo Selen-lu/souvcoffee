@@ -2,9 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <html lang="ko">
-<footer>
-
-
 
     <!-- Footer-->
     <footer class="footer py-4">
@@ -22,10 +19,8 @@
                 </div>
             </div>
         </div>
-
-        <sitemesh:write property ="footer"/>
-
         </div>
-    </footer>
 </footer>
+
+
 </html>

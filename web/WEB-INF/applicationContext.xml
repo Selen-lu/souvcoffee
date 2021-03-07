@@ -7,6 +7,4 @@
 
 <import resource="classpath*:/datasource/datasource.xml"/>
 
-
-
 </beans>

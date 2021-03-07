@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
-
-
-    <!--DB 테이블이름에 언더바 (so_table)  있을 때 카멜 케이스 처리-->
+<!--
+    &lt;!&ndash;DB 테이블이름에 언더바 (so_table)  있을 때 카멜 케이스 처리&ndash;&gt;
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
 
+    <typeAliases>
+        <typeAlias type="com.company.souvcoffee.MS.domain.user.soProduct" alias="soProduct"/>
+    </typeAliases>
+
+
+<environments default="">
+    <environment id="">
+        <transactionManager type="JDBC"></transactionManager>
+        <dataSource type="dataSource">
+            <property name="driverClassName" value="${ms.db.driverClassName}" />
+            &lt;!&ndash;datasource.properties 확인 필요 / window 인증 없이 로그인 할 거라 인증 참값줬나 확인 필요 &ndash;&gt;
+            &lt;!&ndash;jdbc : sqlserver : // localhost; integratedSecurity = true;&ndash;&gt;
+            <property name="url" value="${ms.db.url}" />
+            <property name="username" value="${ms.db.username}" />
+            <property name="password" value="${ms.db.password}" />
+        </dataSource>
+    </environment>
+</environments>-->
 </configuration>
 
 

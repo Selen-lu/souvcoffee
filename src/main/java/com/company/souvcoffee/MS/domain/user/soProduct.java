@@ -3,6 +3,7 @@ package com.company.souvcoffee.MS.domain.user;
 import java.sql.Date;
 
 public class soProduct {
+
     public soProduct() {}
 
     //만약 초기값을 주고싶으면 
@@ -19,8 +20,7 @@ public class soProduct {
     private String pori;
     private byte pcaf;
 
-
-    public soProduct(int pid, String pname, int pprice, int pdiscount, int pstock, String pmf, int pterms) {
+    public soProduct(int pid, String pname, int pprice, int pdiscount, int pstock, String pmf, int pterms, Date preg, int psell, String pori, byte pcaf) {
         this.pid = pid;
         this.pname = pname;
         this.pprice = pprice;
@@ -28,9 +28,6 @@ public class soProduct {
         this.pstock = pstock;
         this.pmf = pmf;
         this.pterms = pterms;
-    }
-
-    public soProduct(Date preg, int psell, String pori, byte pcaf) {
         this.preg = preg;
         this.psell = psell;
         this.pori = pori;

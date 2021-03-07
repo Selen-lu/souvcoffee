@@ -59,26 +59,29 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "service.do", method = RequestMethod.GET)
-    public String service(Locale locale) {
-        LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "user/service";
-    }
-
-    @RequestMapping(value = "portfolio.do", method = RequestMethod.GET)
-    public String portfolio(Locale locale) {
-        LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "user/portfolio";
-    }
     @RequestMapping(value = "about.do", method = RequestMethod.GET)
     public String about(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/about";
     }
-    @RequestMapping(value = "team.do", method = RequestMethod.GET)
+
+
+    @RequestMapping(value = "visit.do", method = RequestMethod.GET)
+    public String service(Locale locale) {
+        LOGGER.info("Welcome home! The client locale is {}.", locale);
+        return "user/visit";
+    }
+
+    @RequestMapping(value = "menu.do", method = RequestMethod.GET)
+    public String portfolio(Locale locale) {
+        LOGGER.info("Welcome home! The client locale is {}.", locale);
+        return "user/menu";
+    }
+
+    @RequestMapping(value = "goods.do", method = RequestMethod.GET)
     public String user(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
-        return "user/team";
+        return "user/goods";
     }
     @RequestMapping(value = "contact.do", method = RequestMethod.GET)
     public String contact(Locale locale) {
