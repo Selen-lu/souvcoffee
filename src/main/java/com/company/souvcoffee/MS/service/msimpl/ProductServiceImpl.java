@@ -1,5 +1,6 @@
 package com.company.souvcoffee.MS.service.msimpl;
 import com.company.souvcoffee.MS.dao.ms.ProductDAO;
+import com.company.souvcoffee.MS.domain.user.Orders;
 import com.company.souvcoffee.MS.domain.user.Product;
 import com.company.souvcoffee.MS.service.ms.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,7 @@ import java.util.List;
 public class ProductServiceImpl  implements ProductService {
 
 
-
-    ProductDAO productdao;
+   private ProductDAO productdao;
 
     @Autowired
     public void setProductdao(ProductDAO productdao) {
@@ -27,4 +27,5 @@ public class ProductServiceImpl  implements ProductService {
        return  productdao.productList();
 
     }
+
 }

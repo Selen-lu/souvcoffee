@@ -10,7 +10,7 @@ public class Orders {
     private Date orddate;
     private String ordname;
     private String ordphone;
-    private int  ordpost;
+    private String  ordpost;
     private String ordaddr;
     private  int ordpoint;
     private String   ordcoupons;
@@ -20,25 +20,22 @@ public class Orders {
     private int  ordinvoice;
     private int ordcode;  // fk
 
-    public Orders(int ordid, Date orddate, String ordname, String ordphone, int ordpost, String ordaddr) {
+    public Orders(int ordid, Date orddate, String ordname, String ordphone, String ordpost, String ordaddr, int ordpoint, String ordcoupons) {
         this.ordid = ordid;
         this.orddate = orddate;
         this.ordname = ordname;
         this.ordphone = ordphone;
         this.ordpost = ordpost;
         this.ordaddr = ordaddr;
-    }
-
-    public Orders(int ordpoint, String ordcoupons, int orddeliver, int ordamount, int ordpay, int ordinvoice) {
         this.ordpoint = ordpoint;
         this.ordcoupons = ordcoupons;
+    }
+
+    public Orders(int orddeliver, int ordamount, int ordpay, int ordinvoice, int ordcode) {
         this.orddeliver = orddeliver;
         this.ordamount = ordamount;
         this.ordpay = ordpay;
         this.ordinvoice = ordinvoice;
-    }
-
-    public Orders(int ordcode) {
         this.ordcode = ordcode;
     }
 
@@ -74,11 +71,11 @@ public class Orders {
         this.ordphone = ordphone;
     }
 
-    public int getOrdpost() {
+    public String getOrdpost() {
         return ordpost;
     }
 
-    public void setOrdpost(int ordpost) {
+    public void setOrdpost(String ordpost) {
         this.ordpost = ordpost;
     }
 
@@ -144,5 +141,25 @@ public class Orders {
 
     public void setOrdcode(int ordcode) {
         this.ordcode = ordcode;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "ordid=" + ordid +
+                ", orddate=" + orddate +
+                ", ordname='" + ordname + '\'' +
+                ", ordphone='" + ordphone + '\'' +
+                ", ordpost='" + ordpost + '\'' +
+                ", ordaddr='" + ordaddr + '\'' +
+                ", ordpoint=" + ordpoint +
+                ", ordcoupons='" + ordcoupons + '\'' +
+                ", orddeliver=" + orddeliver +
+                ", ordamount=" + ordamount +
+                ", ordpay=" + ordpay +
+                ", ordinvoice=" + ordinvoice +
+                ", ordcode=" + ordcode +
+                '}';
     }
 }

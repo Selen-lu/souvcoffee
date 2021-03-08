@@ -16,8 +16,7 @@ import java.util.Locale;
 // https://addio3305.tistory.com/43
 
 
-//RestController => json 값 주고 받기 , 객체 자체를 반환 해도 제이슨으로 출력해줌
-// sitemesh 사용 + main에서 사용하면 조금 곤란해서 사용할거면 따로 컨트롤러 빼야될듯
+
 @Controller
 public class MainController {
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);

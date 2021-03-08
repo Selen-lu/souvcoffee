@@ -14,9 +14,8 @@
 
             use souvenir;/* db 사용 선언  // mssql 의 dao.souvenir -> 스케마.디비이름  */
 
-            SELECT
-      *
-        FROM soProduct
+            SELECT *
+        FROM suvProduct
     </select>
 
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.souvcoffee.ordersMapper">
+
+
+
+    <select id="ordersList" resultMap="ordersResultMap" parameterType ="hashmap">
+
+
+    use souvenir;
+    SELECT *
+    FROM suvOrders;
+
+    </select>
+
+
+
+    <resultMap id="ordersResultMap" type="Orders">
+        <id property="ordid" column="ord_id"/>
+        <result property="orddate" column="ord_date"/>
+        <result property="ordname" column="ord_name"/>
+        <result property="ordphone" column="ord_phone"/>
+        <result property="ordpost" column="ord_post"/>
+        <result property="ordaddr" column="ord_addr"/>
+        <result property="ordpoint" column="ord_point"/>
+        <result property="ordcoupons" column="ord_coupons"/>
+        <result property="orddeliver" column="ord_deliver"/>
+        <result property="ordamount" column="ord_amount"/>
+        <result property="ordpay" column="ord_pay"/>
+        <result property="ordinvoice" column="ord_invoice"/>
+        <result property="ordcode" column="ord_code"/>
+    </resultMap>
+</mapper>

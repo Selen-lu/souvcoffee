@@ -31,12 +31,21 @@
     <!--sqlSessionFactory를 생성하는 sqlSessionFactoryBean 객체 설정-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.company.souvcoffee.MS.domain.user" />
+        <property name="typeAliasesPackage" value="com.company.souvcoffee.MS.domain" />
         <property name="mapperLocations">
             <list>
                 <value>classpath*:mappers/ms/*Mapper.xml</value>
             </list>
         </property>
+
+<!--
+        &lt;!&ndash; 카멜케이스 &ndash;&gt;
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"></property>
+            </bean>
+        </property>-->
+
     </bean>
 
 
@@ -75,12 +84,20 @@
         <property name="typeAliasesPackage" value="com.company.souvcoffee.MY.domain" />
         <!-- 이미지 경로  -->
         <property name="mapperLocations">
-
             <!-- 연결할 때 생성하는걸로 변경. 생성하고 비워두면 모든 매핑이 안됨-->
             <list>
                 <value>classpath*:mappers/my/*Mapper.xml</value>
             </list>
         </property>
+
+<!--
+        &lt;!&ndash; 카멜케이스 &ndash;&gt;
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"></property>
+            </bean>
+        </property>-->
+
     </bean>
 
     <!-- sqlSession Template-->

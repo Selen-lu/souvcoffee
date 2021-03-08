@@ -2,17 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.company.souvcoffee.mappers.ms.userMapper">
+<mapper namespace="com.company.souvcoffee.userMapper">
 
-<!--
-    &lt;!&ndash;조회&ndash;&gt;
-    <select id="userList" resultType="User" parameterMap="hashmap">
-        SELECT uscode,usname,usid,uspw,usgender,usage,usphone,usbirthday,uspost,usaddress ,usagree,
-            uslevel,usbuy,uspoint,usreg,uswidr
-        FROM so_user
+
+    <select id="userList" resultMap="userResultMap" parameterType="User">
+    use user;
+
+    SELECT *
+    FROM suvUser;
     </select>
-    -->
-    
+
+
+
+
     <resultMap id="userResultMap" type="User">
         <id property="uscode" column="us_code"/>
         <result property="usname" column="us_name"/>
