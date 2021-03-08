@@ -74,8 +74,16 @@
 <div id ="body-main-padding"> 여기공간이랑 </div>
 <div id ="body-main-padding"> 여기공간이랑 </div>
 <div id ="body-main-padding"> 네비게이션 안쪽으로 살짝 들어갈 수 있는 이미지 크기 필요 </div>
+<%--
+<div id="_menuSide">
+    <page:applyDecorator name="_menuSide" />
+</div>--%>
 
-<sitemesh:write property="side-navigator"/>
+<div class='side-navigator'>
+
+    <sitemesh:write property="'side-navigator"/>
+</div>
+
 <sitemesh:write property='body'/>
 </body>
 

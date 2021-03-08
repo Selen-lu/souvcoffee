@@ -90,11 +90,6 @@ public class MainController {
 
     }
 
-/*
-    xml 파일없이 구현하는 법
-    @Override
-    protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
-        builder.addDecoratorPath("/*", "/decorator.html")
-                .addDecoratorPath("/admin/*", "/admin/decorator.html");
-    }*/
+
+
 }

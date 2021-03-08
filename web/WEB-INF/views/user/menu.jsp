@@ -8,20 +8,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<head>
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+
+</head>
 <body id="page-top">
-<div id  ="side-navigator">
-    <ul>
-        <a href=""> 사이드바 - > 부트스트랩으로 제작 <li></li></a>
-        <a href=""> <li></li></a>
-        <a href=""> <li></li></a>
 
-    </ul>
 
-</div>
 
 <!-- Portfolio Grid-->
 <section class="page-section bg-light" id="portfolio">
-    <div class="container">
+
+
+
+    <div class="container"><%-- 매뉴 안에 사이드 네비게이터 --%>
+
+
+
+
+
+        <%--사이드 네비게이터--%>
+        <div id ="side-navigator" style="float: left" ><%-- 왼쪽으로 띄움 --%>
+            <div class="container" style="margin-top:30px">
+                <h3>Some Links</h3>
+                <p>Lorem ipsum dolor sit ame.</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+        </div>
+        <%--사이드 네비게이터 끝  --%>
+
+
+        <%--매뉴 content--%>
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Menu</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>

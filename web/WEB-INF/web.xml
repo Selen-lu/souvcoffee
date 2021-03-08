@@ -45,6 +45,12 @@
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
+
+        <!-- Controller에서 jsp 호출 시에 forward되기 때문에 filter가 호출되지 않음 그렇기 때문에 설정함-->
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
     </filter-mapping>
 
 

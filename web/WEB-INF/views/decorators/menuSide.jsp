@@ -24,7 +24,7 @@
 <body>
 <div id ="side-navigator">
 
-    <div class="container" style="margin-top:30px">
+    <div class="container" style="margin-top:30px;float: left" >
         <h3>Some Links</h3>
         <p>Lorem ipsum dolor sit ame.</p>
         <ul class="nav nav-pills flex-column">
