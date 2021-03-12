@@ -1,4 +1,4 @@
-
+<%@page isELIgnored="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"  isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +9,7 @@
 <body id="page-top">
 <!-- Contact-->
 <section class="page-section" id="contact">
-    <div class="container">
+    <div class="container" style="padding-top: 60px">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Contact Us</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>

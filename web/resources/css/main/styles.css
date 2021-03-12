@@ -9938,6 +9938,7 @@ h3 {
   }
 
   .container {
+
     min-width: 992px !important;
   }
 
@@ -9985,7 +9986,7 @@ p {
   line-height: 1.75;
 }
 
-.page-section {
+.page-section { /*모든 페이지의  padding*/
   padding: 6rem 0;
 }
 .page-section h2.section-heading {
@@ -10003,7 +10004,7 @@ p {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+
   }
 }
 ::-moz-selection {

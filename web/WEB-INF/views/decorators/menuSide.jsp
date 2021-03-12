@@ -1,14 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: isaac
-  Date: 2021-03-07
-  Time: 오후 7:55
-  To change this template use File | Settings | File Templates.
---%>
+
+<%@page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
+
 <head>
-    <title>Title</title>
+    <sitemesh:write property ="head"/>
+
+
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="${pageContext.request.contextPath}/resources/css/main/styles.css" rel="stylesheet" />
+
+
+
+
+    <%-- side매뉴--%>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,30 +32,49 @@
             height: 200px;
             background: #aaa;
         }
-    </style>
-</head>
-<body>
-<div id ="side-navigator">
 
-    <div class="container" style="margin-top:30px;float: left" >
-        <h3>Some Links</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <hr class="d-sm-none">
+        .side-navigator{
+            height: auto;
+            padding: 6rem 30px;
+            margin: 50px;
+        }
+
+    </style>
+
+    <sitemesh:write property='head'/>
+</head>
+
+<body>
+
+    <div class="container" >
+        <div class ="side-navigator" style="float: left" > <%--사이드 네비게이터 : 왼쪽으로 띄움--%>
+            <div class="container" >
+                <ul class="nav nav-pills flex-column" style="padding-top:50px">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/menu/coffee.do">COFFEE</a><%-- menu/coffee.do => 컨트롤러 매핑과 같아야 클라이언트 - 컨트롤러 연결 가능--%>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/menu/dessert.do">DESSERT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/menu/tea.do">TEA</a>
+                    </li>
+
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+        </div>
     </div>
-</div>
+<sitemesh:write property ="body"/>
+        <%--사이드 네비게이터 끝  --%>
+
 </body>
+
+
+<!-- Footer-->
+<footer>
+    <div>
+        <sitemesh:write property ="footer"/>
+    </div>
+</footer>
 </html>

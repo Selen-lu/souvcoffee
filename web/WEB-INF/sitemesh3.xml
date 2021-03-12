@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--https://zenomis.tistory.com/entry/sitemesh3-%EC%84%A4%EC%A0%95-->
-<!--https://codesilo.wordpress.com/2013/07/11/spring-mvc-with-sitemesh-3/-->
+
 <sitemesh>
+
 <!-- 갖다 붙일 경로 지정-->
     <!--path => 컨트롤러에서 인터셉트 해오는 경로 == > /* 이면 컨트롤러에서 main 뷰로 보내는 경로
     decorator => 여 jsp에 장식이 되어라
     == 뷰의 경로를 뺏어서 데코레이터에 붙이는듯
     -->
-    <!--네비게이션 네비바 , footer
-     큰 틀은 mapping으로
-    -->
 
 
-    <!-- 기본적으로  3 개의  태그를 사용하는 (head , body , footer) sitemesh는
-    Content-Type이 text / html 인 HTTP 응답 헤더 만 가로 채서 장식하는데,
-    이 외 더 많은 MIME 유형을 추가 할 수있 음-->
-    <mime-type>text/html</mime-type>
-    <mime-type>application/vnd.wap.xhtml+xml</mime-type>
-    <mime-type>application/xhtml+xml</mime-type>
-
-    <!--사용자 정의 태그 규칙-->
-    <content-processor>
-        <tag-rule-bundle class="com.something.CssCompressingBundle">
-
-        </tag-rule-bundle>
-
-        <tag-rule-bundle class="com.something.LinkRewritingBundle">
-
-        </tag-rule-bundle>
-    </content-processor>
-
+<!-- 링크 처리할 때  / 처리 꼭
+ 단호박처럼 그 링크로 간다 -->
     <mapping path="/*">
-        <decorator>/WEB-INF/views/decorators/defaultDecorator.jsp</decorator>
+        <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
+        <decorator>/WEB-INF/views/inc/head.jsp</decorator>
+        <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
     </mapping>
-
 
     <mapping path="/admin.do">
     <decorator>/WEB-INF/views/decorators/adminDecorator.jsp</decorator>
@@ -43,34 +25,34 @@
     <decorator>/WEB-INF/views/decorators/userDecorator.jsp</decorator>
     </mapping>
 
+ <mapping  path="/menu/*.do">
+     <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
+     <decorator>/WEB-INF/views/inc/head.jsp</decorator>
+     <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
+     <decorator>/WEB-INF/views/decorators/menuSide.jsp</decorator>
+    </mapping>
 
 
 
-
-<!--
-<decorator name ="menuSide" page ="/web/WEB-INF/views/decorators/menuSide.jsp"/>
-    <decorator name="header" page="/WEB-INF/views/decorators/front/top.jsp" />
-    <decorator name ="footer"  page ="/WEB-INF/views/inc/footer.jsp"/>-->
-<!--
-
-
-    <decorator name="header" page="/WEB-INF/views/decorators/front/top.jsp" />
-
-    <decorator name ="footer"  page ="/WEB-INF/views/inc/footer.jsp"/>
--->
+    <mapping  path="/menu.do">
+        <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
+        <decorator>/WEB-INF/views/inc/head.jsp</decorator>
+        <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
+        <decorator>/WEB-INF/views/decorators/menuSide.jsp</decorator>
+    </mapping>
 
     <!--로그인 경로 오면 불포함-->
     <mapping path="/login.jsp" exclue="true"/>
-    <mapping path="/api/product/*.do" exclue="true"/> <!--@RestController 예외 -->
-    <mapping path="/api/orders/*.do" exclue="true"/> <!--@RestController 예외 -->
+    <mapping path="/api/**/*.do" exclue="true"/> <!--@RestController 예외 -->
 
 
+
+    <!--    <meta name = "decorator"content = "mydecorator"/>->
+        <decorator name = "mydecorator"page = "layouts / mydecorator.html"/>-->
+    <decorator name = "menuside" page = "/WEB-INF/views/decorators/menuSide.jsp"/>
+    <decorator name = "head" page = "/WEB-INF/views/inc/head.jsp"/>
+    <decorator name = "footer" page = "/WEB-INF/views/inc/footer.jsp"/>
 
 
 </sitemesh>
 
-        <!--Custom tag rules- >
-    < content-processor >
-    < tag-rule-bundle class = "com.something.CssCompressingBundle"  />
-    < tag-rule-bundle class = "com.something.LinkRewritingBundle" />
-      </content-processor >

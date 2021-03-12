@@ -40,14 +40,14 @@
 <!-- sitemesh3 filter-->
 <filter>
         <filter-name>sitemesh</filter-name>
-        <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
-    </filter>
+<!--     <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>-->
+    <filter-class>com.company.souvcoffee.config.ParamConfigurableSiteMeshFilter</filter-class>
+
+</filter>
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
-
-        <!-- Controller에서 jsp 호출 시에 forward되기 때문에 filter가 호출되지 않음 그렇기 때문에 설정함-->
-        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>REQUEST</dispatcher><!--jsp의 요청이 저것들이면 sitemesh 실행-->
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
         <dispatcher>ERROR</dispatcher>
@@ -69,6 +69,7 @@
 <servlet-mapping>
         <servlet-name>dispatcher-servlet</servlet-name>
         <url-pattern>*.do</url-pattern><!--/ => *.do로 변경. 컨트롤러에서 GetMapping 안 .do가 포함되어있으면 연결-->
+
     </servlet-mapping>
 
 

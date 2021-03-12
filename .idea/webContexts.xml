@@ -8,6 +8,7 @@
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/decorators/sample.html" value="file://$PROJECT_DIR$/web/WEB-INF/decorators" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/views/decorators/decorator.html" value="file://$PROJECT_DIR$/web/WEB-INF/views/decorators" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/views/decorators/defaultDecorator.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/views/decorators" />
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/views/user/menu.jsp" value="file://$PROJECT_DIR$/web/WEB-INF/views/user" />
       </map>
     </option>
   </component>

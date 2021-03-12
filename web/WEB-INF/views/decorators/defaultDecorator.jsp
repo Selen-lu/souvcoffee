@@ -28,10 +28,11 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="${pageContext.request.contextPath}/resources/css/main/styles.css" rel="stylesheet" />
 
-
 <head>
+
+
+
     <!-- Navigation-->
-    navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
 
@@ -41,10 +42,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-                <%--  메뉴바 css에서 설정 변경 : 이미지 맨 위로 ,  매뉴바 글씨 크기 작게 --%>
+                    <%--  메뉴바 css에서 설정 변경 : 이미지 맨 위로 ,  매뉴바 글씨 크기 작게 --%>
                     <%--메인 이미지 넣을 공간--%>
-                    <li style="float: top"><a href="main.do"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/BS/main/assets/img/favicon.ico" title="mainIcon" /></a></li>
-                   <%--매뉴 --%>
+                    <li style="float: top">
+                        <a href="main.do">
+                            <img class="img-fluid" src="${pageContext.request.contextPath}/resources/BS/main/assets/img/favicon.ico" title="mainIcon" />
+                        </a>
+                    </li>
+
+                    <%--매뉴 --%>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.do">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="visit.do">Visit</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="menu.do">Menu</a></li>
@@ -58,7 +64,7 @@
             </div>
         </div>
     </nav>
-<sitemesh:write property='head' />
+    <sitemesh:write property='head' />
 </head>
 
 <title>
@@ -69,29 +75,16 @@
 
 <body>
 
-<div id ="body-main-padding"> 여기공간이랑 </div>
-<div id ="body-main-padding"> 여기공간이랑 </div>
-<div id ="body-main-padding"> 여기공간이랑 </div>
-<div id ="body-main-padding"> 여기공간이랑 </div>
-<div id ="body-main-padding"> 네비게이션 안쪽으로 살짝 들어갈 수 있는 이미지 크기 필요 </div>
-<%--
-<div id="_menuSide">
-    <page:applyDecorator name="_menuSide" />
+
+<%--<decorator : body />--%>
+<%--<div class='side-navigator'>
+    <sitemesh:write property="div.'side-navigator"/>
 </div>--%>
-
-<div class='side-navigator'>
-
-    <sitemesh:write property="'side-navigator"/>
-</div>
-
-<sitemesh:write property='body'/>
-</body>
-
+<div><sitemesh:write property='body'/></div>
 
 
 <!-- Footer-->
 <footer class="footer py-4">
-    <sitemesh:write property ="footer"/>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
@@ -108,6 +101,11 @@
     </div>
     </div>
 </footer>
+</body>
+
+
+
+
 
 
 

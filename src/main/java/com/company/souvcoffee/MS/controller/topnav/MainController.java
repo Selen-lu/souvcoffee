@@ -1,4 +1,4 @@
-package com.company.souvcoffee.MS.controller;
+package com.company.souvcoffee.MS.controller.topnav;
 
 
 import config.log4j2.Log4j2;
@@ -17,7 +17,8 @@ import java.util.Locale;
 
 
 
-@Controller
+@Controller("MainController")
+@RequestMapping("/*.do")
 public class MainController {
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);
 
@@ -49,7 +50,7 @@ public class MainController {
     // 기본으로 [/] 는 main이 가져가고
     // 그 뒤로 /+user < 이렇게 쌓는 느낌으로 간다고 생각하면 된다.
     //[/]가  main으로 가게 하는 설정은 sitemesh3.xml에서 했다
-    @RequestMapping(value = {"main.do"} ,method = RequestMethod.GET)
+    @RequestMapping(value = {"/main.do"} ,method = RequestMethod.GET)
     public ModelAndView main(ModelAndView mv){
         System.out.println("Main 입니다 ");
         //기본 패키지 : web/~/~/~
@@ -58,37 +59,38 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "about.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/about.do", method = RequestMethod.GET)
     public String about(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/about";
     }
 
 
-    @RequestMapping(value = "visit.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/visit.do", method = RequestMethod.GET)
     public String service(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/visit";
     }
 
-    @RequestMapping(value = "menu.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/menu.do", method = RequestMethod.GET)
     public String portfolio(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/menu";
     }
 
-    @RequestMapping(value = "goods.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/goods.do", method = RequestMethod.GET)
     public String user(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/goods";
     }
-    @RequestMapping(value = "contact.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/contact.do", method = RequestMethod.GET)
     public String contact(Locale locale) {
         LOGGER.info("Welcome home! The client locale is {}.", locale);
         return "user/contact";
 
 
     }
+
 
 
 
