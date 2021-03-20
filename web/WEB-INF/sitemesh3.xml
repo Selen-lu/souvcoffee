@@ -11,40 +11,37 @@
 
 <!-- 링크 처리할 때  / 처리 꼭
  단호박처럼 그 링크로 간다 -->
-    <mapping path="/*">
+    <mapping path="*.do">
         <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
         <decorator>/WEB-INF/views/inc/head.jsp</decorator>
         <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
     </mapping>
 
-    <mapping path="/admin.do">
-    <decorator>/WEB-INF/views/decorators/adminDecorator.jsp</decorator>
-    </mapping>
-
-    <mapping path="/user.do">
-    <decorator>/WEB-INF/views/decorators/userDecorator.jsp</decorator>
-    </mapping>
-
- <mapping  path="/menu/*.do">
-     <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
-     <decorator>/WEB-INF/views/inc/head.jsp</decorator>
-     <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
-     <decorator>/WEB-INF/views/decorators/menuSide.jsp</decorator>
-    </mapping>
 
 
 
+
+    <!-- 사이드 매뉴바 -->
     <mapping  path="/menu.do">
         <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
         <decorator>/WEB-INF/views/inc/head.jsp</decorator>
         <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
-        <decorator>/WEB-INF/views/decorators/menuSide.jsp</decorator>
+        <decorator>/WEB-INF/views/inc/menuSide.jsp</decorator>
     </mapping>
 
-    <!--로그인 경로 오면 불포함-->
-    <mapping path="/login.jsp" exclue="true"/>
-    <mapping path="/api/**/*.do" exclue="true"/> <!--@RestController 예외 -->
+    <mapping  path="/menu/*.do">
+     <decorator>/WEB-INF/views/decorators/defaultDeco.jsp</decorator>
+     <decorator>/WEB-INF/views/inc/head.jsp</decorator>
+     <decorator>/WEB-INF/views/inc/footer.jsp</decorator>
+     <decorator>/WEB-INF/views/inc/menuSide.jsp</decorator>
+    </mapping>
 
+
+    <!--로그인 경로 오면 불포함-->
+    <mapping path="/login" exclue="true"/>
+    <mapping path="/api/**/*.do" exclue="true"/> <!--@RestController 예외 -->
+    <mapping  path="/admin.do" exclue="true"/>
+    <mapping  path="/user.do" exclue="true"/>
 
 
     <!--    <meta name = "decorator"content = "mydecorator"/>->

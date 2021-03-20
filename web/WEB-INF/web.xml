@@ -7,17 +7,15 @@
 
 
     <!-- ( 2 ) 이 설정이 없으면  톰캣 구동시 오류가 발생한다. -->
-    <absolute-ordering/>
+    <absolute-ordering />
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>WEB-INF/applicationContext.xml</param-value>
-    </context-param>
 
-    <!-- utf-8 인코딩 필터-->
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <!-- utf-8 인코딩 필터-->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -36,17 +34,15 @@
     </filter-mapping>
 
 
-
-<!-- sitemesh3 filter-->
-<filter>
+    <!-- sitemesh3 filter-->
+    <filter>
         <filter-name>sitemesh</filter-name>
-<!--     <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>-->
-    <filter-class>com.company.souvcoffee.config.ParamConfigurableSiteMeshFilter</filter-class>
-
-</filter>
+      <!--  <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>-->
+<filter-class>com.company.souvcoffee.sitemesh3config.ParamConfigurableSiteMeshFilter</filter-class> <!--java config 쪽-->
+    </filter>
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/*</url-pattern> <!--시큐리티 때문에  /* 로 해야될지 아닐지 모르겠음-->
         <dispatcher>REQUEST</dispatcher><!--jsp의 요청이 저것들이면 sitemesh 실행-->
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
@@ -54,19 +50,21 @@
     </filter-mapping>
 
 
+
+
     <!--dispatcher servlet 설정 등록-->
- <servlet>
+    <servlet>
         <servlet-name>dispatcher-servlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+            <param-value>WEB-INF/dispatcher-servlet.xml</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
-
-<!-- dispathcer-servlet 매핑 -->
-<servlet-mapping>
+    <!-- dispathcer-servlet 매핑 -->
+    <servlet-mapping>
         <servlet-name>dispatcher-servlet</servlet-name>
         <url-pattern>*.do</url-pattern><!--/ => *.do로 변경. 컨트롤러에서 GetMapping 안 .do가 포함되어있으면 연결-->
 

@@ -34,9 +34,11 @@
         }
 
         .side-navigator{
+            float: left;
             height: auto;
-            padding: 6rem 30px;
-            margin: 50px;
+            padding: 6rem 20px;
+            margin: 30px;
+            font-size: 25px;
         }
 
     </style>
@@ -49,7 +51,7 @@
     <div class="container" >
         <div class ="side-navigator" style="float: left" > <%--사이드 네비게이터 : 왼쪽으로 띄움--%>
             <div class="container" >
-                <ul class="nav nav-pills flex-column" style="padding-top:50px">
+                <ul class="nav nav-pills flex-column" style="padding-top:20px">
                     <li class="nav-item">
                         <a class="nav-link" href="/menu/coffee.do">COFFEE</a><%-- menu/coffee.do => 컨트롤러 매핑과 같아야 클라이언트 - 컨트롤러 연결 가능--%>
                     </li>

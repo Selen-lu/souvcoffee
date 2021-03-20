@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class OrdersDAOImpl implements OrdersDAO {
 
-    final String order_NAME_SPACE ="com.company.souvcoffee.ordersMapper";
+    final String ORDER_NAME_SPACE ="com.company.souvcoffee.ordersMapper";
 
     private SqlSessionTemplate sqlsession1;
 
@@ -25,6 +25,6 @@ public class OrdersDAOImpl implements OrdersDAO {
 
     @Override
     public List<Orders> ordersList() {
-        return   sqlsession1.selectList(order_NAME_SPACE+".ordersList");
+        return   sqlsession1.selectList(ORDER_NAME_SPACE+".ordersList");
     }
 }

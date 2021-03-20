@@ -5,5 +5,10 @@
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
 
-<import resource="classpath*:/datasource/datasource.xml"/>
+    <!--스프링에서 제공해주는 기능들을 이용할 때는 컨테이너(컨텍스트)에 등록-->
+    <!--아니면 아래처럼 새로 만들고 불러도 된다-->
+    <import resource="classpath*:/datasource/datasource.xml"/>
+
+
+
 </beans>

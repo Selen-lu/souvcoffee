@@ -11,9 +11,9 @@
 </header>
 
 
+</title>
 <title>
     <sitemesh:write property='title' />
-</title>
 
 
 

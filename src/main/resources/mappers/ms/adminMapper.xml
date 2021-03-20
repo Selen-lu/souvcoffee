@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.souvcoffee.adminMapper">
+
+
+
+    <select id="adminList" resultMap="adminResultMap" parameterType ="hashmap">
+
+
+        use souvenir;
+        SELECT *
+        FROM adadmin;
+
+    </select>
+
+
+
+    <resultMap id="adminResultMap" type="Admin">
+        <id property="aid" column="a_id"/>
+        <result property="apw" column="a_pw"/>
+        <result property="aname" column="a_name"/>
+        <result property="alevel" column="a_level"/>
+        <result property="areg" column="a_reg"/>
+    </resultMap>
+</mapper>

@@ -18,7 +18,7 @@ import java.util.Locale;
 
 
 @Controller("MainController")
-@RequestMapping("/*.do")
+
 public class MainController {
     private static final Logger LOGGER = LoggerFactory.getLogger(Log4j2.class);
 

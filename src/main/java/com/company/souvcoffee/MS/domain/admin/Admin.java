@@ -8,6 +8,11 @@ public class Admin {
     private byte  alevel;
     private String  areg;
 
+
+    // 안만들어도 상관없지만 Warning이 발생함
+    private static final long serialVersionUID = 1L;
+
+
     public Admin(String aid, String apw, String aname, byte alevel, String areg) {
         this.aid = aid;
         this.apw = apw;

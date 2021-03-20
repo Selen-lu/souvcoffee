@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public class ProductDAOImpl implements ProductDAO {
 
-    final String MS_NAME_SPACE = "com.company.souvcoffee.productMapper";
+    final String PRODUCT_NAME_SPACE = "com.company.souvcoffee.productMapper";
 
     private SqlSessionTemplate sqlsession;
 
@@ -26,8 +26,8 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public List<Product> productList() {
-     return   sqlsession.selectList(MS_NAME_SPACE+".productList");
-    }
+     return   sqlsession.selectList(PRODUCT_NAME_SPACE+".productList");
+    }/* com.company.souvcoffee.productMapper.productList*/
 
 
 

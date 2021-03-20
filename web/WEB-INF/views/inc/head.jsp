@@ -49,15 +49,16 @@
                     <%--메인 이미지 넣을 공간--%>
                     <li style="float: top"><a href="/main.do"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/BS/main/assets/img/favicon.ico" title="mainIcon" /></a></li>
                     <%--매뉴 --%>
+                        <%--  / <- 표시 꼭 꼭 해주기. 단호박처럼 이 링크로 가겠다는 뜻 --%>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about.do">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/visit.do">Visit</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/menu.do">Menu</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/goods.do">goods</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.do">Contact</a></li>
                     <%-- 아직 페이지, 연결 안했음 --%>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.do">log in</a></li><%--모달창--%>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.do">장바구니</a></li><%-- 페이지 얀동--%>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.do">검색</a></li><%-- 페이지 연결--%>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">log in</a></li><%--모달창--%>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/wishbox.do">장바구니</a></li><%-- 페이지 얀동--%>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/search.do">검색</a></li><%-- 페이지 연결--%>
                 </ul>
             </div>
         </div>

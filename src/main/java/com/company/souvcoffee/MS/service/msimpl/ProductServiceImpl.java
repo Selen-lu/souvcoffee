@@ -9,9 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
+/*@Service 계층에 CURD 메서드들을 구성*/
 @Service
-@Transactional
 public class ProductServiceImpl  implements ProductService {
 
 
